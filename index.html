@@ -3,43 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Milena Kapralova</title>
+    <title>Rotating Text and Arcs</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="circle-container">
-    <!-- SVG for arcs and text paths with decreased radii and contrasting label colors -->
     <svg viewBox="0 0 6000 6000" class="svg-circles">
-        <!-- Group 1: Arc and Text - Largest arc -->
+        <!-- Group 1: Arc and Text - AI Projects -->
         <g class="arc-group arc1">
-            <path id="arc1" d="M 500, 3000 A 2500, 2500 0 0, 1 5500, 3000" fill="transparent" stroke="#6A0DAD" stroke-width="300" />
-            <text>
-                <textPath href="#arc1" startOffset="10%" fill="#FFDE21" font-size="300" font-weight="normal">AI Projects</textPath>
-            </text>
+            <a href="skills.html">
+                <path id="arc1" d="M 500, 3000 A 2500, 2500 0 0, 1 5500, 3000" fill="transparent" stroke="#6A0DAD" stroke-width="300" />
+                <text>
+                    <textPath href="#arc1" startOffset="10%" fill="#FFD700" font-size="250" font-weight="normal">Talking about skills...</textPath>
+                </text>
+            </a>
         </g>
 
-        <!-- Group 2: Arc and Text - Slightly smaller radius -->
+        <!-- Group 2: Arc and Text - Publications -->
         <g class="arc-group arc2">
-            <path id="arc2" d="M 900, 3000 A 2100, 2100 0 0, 1 5100, 3000" fill="transparent" stroke="#FFDE21" stroke-width="300" />
-            <text>
-                <textPath href="#arc2" startOffset="25%" fill="#276221" font-size="300" font-weight="bold">Publications</textPath>
-            </text>
+            <a href="ai-projects.html">
+                <path id="arc2" d="M 900, 3000 A 2100, 2100 0 0, 1 5100, 3000" fill="transparent" stroke="#FFDE21" stroke-width="300" />
+                <text>
+                    <textPath href="#arc2" startOffset="25%" fill="#6A0DAD" font-size="250" font-weight="bold">AI projects & publications</textPath>
+                </text>
+            </a>
         </g>
 
-        <!-- Group 3: Arc and Text - Medium radius -->
+        <!-- Group 3: Arc and Text - What I Like to Do -->
         <g class="arc-group arc3">
-            <path id="arc3" d="M 1300, 3000 A 1700, 1700 0 0, 1 4700, 3000" fill="transparent" stroke="#276221" stroke-width="300" />
-            <text>
-                <textPath href="#arc3" startOffset="40%" fill="#E43A36" font-size="300" font-weight="bold">What I like to do</textPath>
-            </text>
+            <a href="other-work-experience.html">
+                <path id="arc3" d="M 1300, 3000 A 1700, 1700 0 0, 1 4700, 3000" fill="transparent" stroke="#276221" stroke-width="300" />
+                <text>
+                    <textPath href="#arc3" startOffset="35%" fill="#FFD700" font-size="250" font-weight="bold">Other work experience</textPath>
+                </text>
+            </a>
         </g>
 
-        <!-- Group 4: Arc and Text - Smaller radius -->
+        <!-- Group 4: Arc and Text - Studies -->
         <g class="arc-group arc4">
-            <path id="arc4" d="M 1700, 3000 A 1300, 1300 0 0, 1 4300, 3000" fill="transparent" stroke="#E43A36" stroke-width="300" />
-            <text>
-                <textPath href="#arc4" startOffset="55%" fill="#276221" font-size="300" font-weight="bold">Studies</textPath>
-            </text>
+            <a href="about.html">
+                <path id="arc4" d="M 1700, 3000 A 1300, 1300 0 0, 1 4300, 3000" fill="transparent" stroke="#8B0000" stroke-width="300" />
+                <text>
+                    <textPath href="#arc4" startOffset="55%" fill="#FFD700" font-size="250" font-weight="bold">About me</textPath>
+                </text>
+            </a>
         </g>
     </svg>
 
@@ -48,5 +55,6 @@
         <h1>Hello, I'm Milena</h1>
     </div>
 </div>
+<footer class="footer">Made by Milena Kapralova, 2024</footer>
 </body>
 </html>
