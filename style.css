@@ -14,6 +14,21 @@ body {
     background-color: #EED9C4;
     margin: 0;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+body.non-index-page {
+    background-color: #F2E6D5; /* Slightly lighter beige for non-index pages */
+}
+
+/* Fade-in effect when the page loads */
+body.fade-in {
+    opacity: 1;
+}
+
+/* Fade-out effect when navigating away */
+body.fade-out {
+    opacity: 0;
 }
 
 .circle-container {
@@ -84,15 +99,137 @@ body {
 @keyframes rotateArc3 { from { transform: rotate(180deg); } to { transform: rotate(540deg); } }
 @keyframes rotateArc4 { from { transform: rotate(270deg); } to { transform: rotate(630deg); } }
 
-/* Footer styling */
+/* Footer styling for the index page */
 .footer {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #2B2D2F;
+    background-color: #EED9C4; /* Match index page background */
     position: fixed;
     bottom: 0;
+}
+
+/* Footer styling for non-index pages */
+.non-index-page .footer {
+    background-color: #F2E6D5; /* Lighter beige background for non-index pages */
+}
+
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 100%;
+    background-color: #EED9C4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+    box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+/* Nav Button Styling - Miniature Arc Buttons */
+.nav-button {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Make navigation button font bold and larger */
+.nav-button svg .mini-text {
+
+    font-size: 5000; /* Larger font size for button labels */
+    font-weight: normal; /* Bold text */
+    fill: #2B2D2F;
+}
+
+.nav-button svg.mini-svg {
     width: 100%;
-    text-align: center;
-    padding: 10px;
-    font-size: 18px;
-    font-family: "Chillax", sans-serif;
-    color: #2B2D2F;
-    background-color: rgba(238, 217, 196, 0.8); /* Slight background to ensure readability */
+    height: 100%;
+}
+
+
+
+/* Rotating Animations for Arcs Only */
+.mini-arc1, .mini-arc2, .mini-arc3, .mini-arc4,
+.mini-arc-about, .mini-arc-ai, .mini-arc-work, .mini-arc-skills {
+    transform-origin: 50% 50%;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* Individual Animation Keyframes */
+.mini-arc1, .mini-arc-skills {
+    animation-name: rotateMiniArc1;
+}
+
+.mini-arc2, .mini-arc-ai {
+    animation-name: rotateMiniArc2;
+    animation-direction: reverse;
+}
+
+.mini-arc3, .mini-arc-work {
+    animation-name: rotateMiniArc3;
+}
+
+.mini-arc4, .mini-arc-about {
+    animation-name: rotateMiniArc4;
+    animation-direction: reverse;
+}
+
+/* Define Keyframes for Rotations */
+@keyframes rotateMiniArc1 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateMiniArc2 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateMiniArc3 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateMiniArc4 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+
+/* Shattering effect keyframes */
+@keyframes shatter {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: scale(0.1) rotate(360deg); opacity: 0; }
+}
+
+/* Add the shatter effect class to each arc */
+.arc-shatter {
+    animation: shatter 0.5s forwards; /* Adjust duration if needed */
+}
+/* Arrival effect keyframes */
+@keyframes arrival {
+    0% { transform: scale(0.1) rotate(-360deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Apply arrival animation to each nav button */
+.sidebar .nav-button {
+    animation: arrival 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i)); /* Stagger effect */
+    opacity: 0; /* Start hidden for arrival effect */
 }
